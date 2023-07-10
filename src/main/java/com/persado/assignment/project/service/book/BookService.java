@@ -8,4 +8,6 @@ import java.util.List;
 public interface BookService {
     List<BookEntity> getAllBooks();
     void deleteBook(Long id) throws BookOnLoanException;
+    List<BookEntity> getAllAvailableBooks();
+    void loanBook(Long bookId, Long userId);
 }
