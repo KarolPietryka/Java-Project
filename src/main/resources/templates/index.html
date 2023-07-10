@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>Welcome to the Book Library</h1>
+
+    <ul>
+        <li><a th:href="@{/newUser}">Create New User</a></li>
+        <li><a th:href="@{/newBook}">Create New Book</a></li>
+        <li><a th:href="@{/manageUsers}">Manage Users</a></li>
+        <li><a th:href="@{/manageBooks}">Manage Books</a></li>
+        <li><a th:href="@{/loanBook}">Loan a Book</a></li>
+        <li><a th:href="@{/returnBook}">Return a Book</a></li>
+    </ul>
+</body>
+</html>
