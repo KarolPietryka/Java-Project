@@ -10,4 +10,7 @@ public interface BookService {
     void deleteBook(Long id) throws BookOnLoanException;
     List<BookEntity> getAllAvailableBooks();
     void loanBook(Long bookId, Long userId);
+    List<BookEntity> findAllLoanedBooks();
+
+    void returnBook(Long bookId, Long userId);
 }

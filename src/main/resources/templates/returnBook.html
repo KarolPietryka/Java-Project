@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Return Book</title>
+</head>
+<body>
+<h1>Return Book</h1>
+<table>
+    <tr>
+        <th>Book Title</th>
+        <th>User</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="book : ${loanedBooks}">
+        <td th:text="${book.name}"></td>
+        <td>
+            <form th:action="@{'/returnBook/' + ${book.id}}" method="post">
+                <select th:name="userId">
+                    <option th:each="loan : ${book.loans}" th:value="${loan.user.id}" th:text="${loan.user.firstName + ' ' + loan.user.lastName}"></option>
+                </select>
+                <input type="submit" value="Register Return">
+            </form>
+        </td>
+    </tr>
+</table>
+<a href="/">Return to main page</a>
+</body>
+</html>

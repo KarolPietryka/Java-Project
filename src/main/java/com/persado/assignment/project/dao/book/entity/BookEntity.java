@@ -1,10 +1,12 @@
 package com.persado.assignment.project.dao.book.entity;
 
+import com.persado.assignment.project.dao.loan.entity.LoanEntity;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Data
 @Entity
@@ -28,4 +30,7 @@ public class BookEntity {
     private int copiesPurchased;
 
     private int copiesAvailable;
+
+    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
+    private List<LoanEntity> loans;
 }
